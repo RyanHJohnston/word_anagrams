@@ -1,0 +1,24 @@
+import zipfile
+import collections
+import math
+
+# Task 1: unzip words.zip and ls output
+zipfile.ZipFile('words.zip').extractall('.')
+
+"""
+Load/Read a dictionary of English words from the file 'words/words.txt' into
+a Python List as wordlist. The output should be as follows for the first ten (10) words and total
+number of words in the wordlist should match exactly with mine:
+    """
+
+
+# load a dictioary of english words from words.txt into wordlist
+file = open("words/words.txt", "r");
+
+with open("words/words.txt") as file:
+    read_data = file.read() # data per line
+file.close()
+
+
+
+
