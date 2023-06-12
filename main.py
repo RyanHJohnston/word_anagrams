@@ -1,5 +1,6 @@
 import zipfile
 import collections
+import itertools
 from itertools import permutations
 
 # Task 1: unzip words.zip and ls output
@@ -84,13 +85,23 @@ def create_anagram_dict(words):
 
 result_dict = create_anagram_dict(wordclean)
 
-for length, inner_dict in result_dict.items():
-    print(f"Length: {length}")
-    for word, anagrams in inner_dict.items():
-        print(f"{word}: {anagrams}")
-    print()
+# prints the first five key value pairs
+def print_dict(dic):
+    first_five = itertools.islice(dic.items(), 2)
+    for key, value in first_five:
+        print(key, value)
+
+# print out the anagram dict
+print_dict(result_dict)
+
+
+#for length, inner_dict in result_dict.items():
+#    print(f"Length: {length}")
+#    for word, anagrams in inner_dict.items():
+#        print(f"{word}: {anagrams}")
+#    print()
+
 
 # Task 5:
-
 
 file.close()
